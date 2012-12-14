@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/NWN" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NWN" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfNWGameServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NWGameServer" nillable="true" type="tns:NWGameServer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNWGameServer" nillable="true" type="tns:ArrayOfNWGameServer" />
+  <xs:complexType name="NWGameServer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivePlayerCount" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="BuildNumber" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ExpansionsMask" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="LastHeartbeat" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LocalVault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaximumPlayerCount" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Online" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PrivateServer" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NWGameServer" nillable="true" type="tns:NWGameServer" />
+</xs:schema>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://api.mst.valhallalegends.com/NWNMasterServerAPI" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="NWNMasterServerAPI" targetNamespace="http://api.mst.valhallalegends.com/NWNMasterServerAPI" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://api.mst.valhallalegends.com/NWNMasterServerAPI/Imports">
+      <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd0" namespace="http://api.mst.valhallalegends.com/NWNMasterServerAPI" />
+      <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NWN" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByName" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByAddress" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetOnlineServerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineServerList" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetOnlineServerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineServerListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="INWNMasterServerAPI">
+    <wsdl:operation name="LookupServerByName">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByName" message="tns:INWNMasterServerAPI_LookupServerByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByNameResponse" message="tns:INWNMasterServerAPI_LookupServerByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupServerByAddress">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByAddress" message="tns:INWNMasterServerAPI_LookupServerByAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByAddressResponse" message="tns:INWNMasterServerAPI_LookupServerByAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineServerList">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineServerList" message="tns:INWNMasterServerAPI_GetOnlineServerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineServerListResponse" message="tns:INWNMasterServerAPI_GetOnlineServerList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="NWNMasterServerAPI">
+    <wsdl:port name="WSHttpBinding_INWNMasterServerAPI" binding="i0:WSHttpBinding_INWNMasterServerAPI">
+      <soap12:address location="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_INWNMasterServerAPI" binding="i0:BasicHttpBinding_INWNMasterServerAPI">
+      <soap:address location="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc/ASMX" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
