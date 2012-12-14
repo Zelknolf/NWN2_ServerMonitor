@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{877CBCC8-8FEF-4377-9E17-CDDAD60006C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWN2_ServerMonintor", "NWN2_ServerMonintor.csproj", "{877CBCC8-8FEF-4377-9E17-CDDAD60006C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

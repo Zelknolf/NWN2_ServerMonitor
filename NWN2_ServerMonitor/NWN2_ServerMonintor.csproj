@@ -8,8 +8,8 @@
     <ProjectGuid>{877CBCC8-8FEF-4377-9E17-CDDAD60006C2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>NWN2_ServerMonitor</RootNamespace>
+    <AssemblyName>NWN2_ServerMonitor</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -80,8 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="output.config" />
-    <None Include="Service References\ServiceReference1\ConsoleApplication1.ServiceReference1.NWGameServer.datasource">
+    <None Include="Service References\ServiceReference1\NWN2_ServerMonitor.ServiceReference1.NWGameServer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\NWNMasterServerAPI.wsdl" />

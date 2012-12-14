@@ -11,13 +11,14 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Collections;
 
-namespace ConsoleApplication1
+namespace NWN2_ServerMonitor
 {
     class Program
     {
         public class SysTrayApp : Form
         {
             public static List<string> WatchedServers = new List<string>();
+            public static ServerListForm serverLists = null;
 
             public static NWNMasterServerAPIClient client;
             public static NotifyIcon trayIcon;
@@ -26,6 +27,18 @@ namespace ConsoleApplication1
             [STAThread]
             public static void Main()
             {
+                // First, make sure it's not already running. End early if it is.
+                try
+                {
+                    System.Diagnostics.Process[] processes = System.Diagnostics.Process.GetProcessesByName("NWN2_ServerMonitor");
+                    if (processes.Length > 1)
+                    {
+                        return;
+                    }
+                }
+                catch{ }
+
+                // Next, see if we've saved any server lists.
                 try
                 {
                     string savedServersFile = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\SavedServers.sav";
@@ -39,11 +52,15 @@ namespace ConsoleApplication1
                     }
                 }
                 catch { }
+
+                // And then we open the actual main part of the application.
                 try
                 {
                     client = new NWNMasterServerAPIClient("WSHttpBinding_INWNMasterServerAPI");
                     Application.Run(new SysTrayApp());
                 }
+
+                // When we're done, try to save.
                 finally
                 {
                     if (WatchedServers.Count > 0)
@@ -107,7 +124,9 @@ namespace ConsoleApplication1
 
             private void ShowServers(object sender, EventArgs e)
             {
-                new ServerListForm().ShowDialog();
+                if (serverLists == null)
+                    serverLists = new ServerListForm();
+                serverLists.ShowDialog();
             }
 
             protected override void Dispose(bool isDisposing)
