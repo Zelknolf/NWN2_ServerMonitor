@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Collections;
+using System.Resources;
 
 namespace NWN2_ServerMonitor
 {
@@ -252,15 +253,29 @@ namespace NWN2_ServerMonitor
                         SysTrayApp.WatchedServers.Remove(remove);
                     }
                 }
-                string number;
-                if (playersOn < 10)
-                    number = "0" + playersOn.ToString();
-                else if (playersOn < 22)
-                    number = playersOn.ToString();
-                else
-                    number = "21";
-                string icon = System.IO.Path.GetDirectoryName(Application.ExecutablePath) + "\\ICON_" + number + ".ico";
-                SysTrayApp.trayIcon.Icon = new Icon(icon);
+                if(playersOn > 21)          SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_21;
+                else if (playersOn == 20)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_20;
+                else if (playersOn == 19)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_19;
+                else if (playersOn == 18)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_18;
+                else if (playersOn == 17)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_17;
+                else if (playersOn == 16)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_16;
+                else if (playersOn == 15)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_15;
+                else if (playersOn == 14)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_14;
+                else if (playersOn == 13)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_13;
+                else if (playersOn == 12)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_12;
+                else if (playersOn == 11)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_11;
+                else if (playersOn == 10)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_10;
+                else if (playersOn == 09)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_09;
+                else if (playersOn == 08)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_08;
+                else if (playersOn == 07)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_07;
+                else if (playersOn == 06)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_06;
+                else if (playersOn == 05)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_05;
+                else if (playersOn == 04)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_04;
+                else if (playersOn == 03)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_03;
+                else if (playersOn == 02)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_02;
+                else if (playersOn == 01)   SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_01;
+                else                        SysTrayApp.trayIcon.Icon = PopulationIcons.ICON_00;
+
                 SysTrayApp.trayIcon.Text = String.Format("A total of {0} players are logged onto watched servers.", playersOn);
             }
         }
