@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net;
 using System.Configuration;
-using System.Web.Script.Serialization;
 using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml.Serialization;
 using System.Collections;
 using System.Resources;
+
+using NWN2_ServerMonitor.com.valhallalegends.mst.api1;
 
 namespace NWN2_ServerMonitor
 {
@@ -21,7 +21,7 @@ namespace NWN2_ServerMonitor
             public static List<string> WatchedServers = new List<string>();
             public static ServerListForm serverLists = null;
 
-            public static NWNMasterServerAPIClient client;
+            public static NWNMasterServerAPI client;
             public static NotifyIcon trayIcon;
             public static ContextMenu trayMenu;
 
@@ -57,7 +57,7 @@ namespace NWN2_ServerMonitor
                 // And then we open the actual main part of the application.
                 try
                 {
-                    client = new NWNMasterServerAPIClient("WSHttpBinding_INWNMasterServerAPI");
+                    client = new NWNMasterServerAPI();
                     Application.Run(new SysTrayApp());
                 }
 
@@ -120,7 +120,7 @@ namespace NWN2_ServerMonitor
             private void OnExit(object sender, EventArgs e)
             {
                 Application.Exit();
-                client.Close();
+                client.Dispose();
             }
 
             private void ShowServers(object sender, EventArgs e)
@@ -162,7 +162,7 @@ namespace NWN2_ServerMonitor
                 box.FullRowSelect = true;
                 try
                 {
-                    foreach (NWN.NWGameServer Server in SysTrayApp.client.GetOnlineServerList("NWN2"))
+                    foreach (NWGameServer Server in SysTrayApp.client.GetOnlineServerList("NWN2"))
                     {
                         bool isSelected = SysTrayApp.WatchedServers.Contains(Server.ServerAddress);
                         box.Items.Add(new ListViewItem(new string[] { Server.ServerName, Server.ModuleName, Server.ServerAddress, Server.ActivePlayerCount.ToString(), Server.MaximumPlayerCount.ToString() }) { Selected = isSelected });
@@ -231,7 +231,7 @@ namespace NWN2_ServerMonitor
                 List<string> removedServers = new List<string>();
                 foreach (string ServerAddress in SysTrayApp.WatchedServers)
                 {
-                    NWN.NWGameServer Server = null;
+                    NWGameServer Server = null;
                     try
                     {
                         Server = SysTrayApp.client.LookupServerByAddress("NWN2", ServerAddress);

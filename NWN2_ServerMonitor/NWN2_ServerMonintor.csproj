@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NWN2_ServerMonitor</RootNamespace>
     <AssemblyName>NWN2_ServerMonitor</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -54,22 +54,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NWNMasterServerAPI.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PopulationIcons.Designer.cs">
@@ -77,43 +71,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PopulationIcons.resx</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ServiceReference1\Reference.cs">
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\com.valhallalegends.mst.api1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
+      <DependentUpon>Reference.map</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ServiceReference1\NWN2_ServerMonitor.ServiceReference1.NWGameServer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
+    <None Include="ICON_00.ico" />
+    <None Include="ICON_01.ico" />
+    <None Include="ICON_02.ico" />
+    <None Include="ICON_03.ico" />
+    <None Include="ICON_04.ico" />
+    <None Include="ICON_05.ico" />
+    <None Include="ICON_06.ico" />
+    <None Include="ICON_07.ico" />
+    <None Include="ICON_08.ico" />
+    <None Include="ICON_09.ico" />
+    <None Include="ICON_10.ico" />
+    <None Include="ICON_11.ico" />
+    <None Include="ICON_12.ico" />
+    <None Include="ICON_13.ico" />
+    <None Include="ICON_14.ico" />
+    <None Include="ICON_15.ico" />
+    <None Include="ICON_16.ico" />
+    <None Include="ICON_17.ico" />
+    <None Include="ICON_18.ico" />
+    <None Include="ICON_19.ico" />
+    <None Include="ICON_20.ico" />
+    <None Include="ICON_21.ico" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI.wsdl" />
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI.xsd" />
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI1.wsdl" />
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI1.xsd" />
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI2.xsd" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\NWNMasterServerAPI.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
+    <None Include="Web References\com.valhallalegends.mst.api1\NWGameServer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI.wsdl" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI.xsd" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI0.wsdl" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI0.xsd" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI1.xsd" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI2.xsd" />
+    <None Include="Web References\com.valhallalegends.mst.api1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
@@ -140,79 +149,32 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <ItemGroup>
     <EmbeddedResource Include="PopulationIcons.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>PopulationIcons.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ICON_00.ico" />
+    <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ICON_01.ico" />
+    <WebReferenceUrl Include="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\com.valhallalegends.mst.api1\</RelPath>
+      <UpdateFromURL>http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NWN2_ServerMonitor_com_valhallalegends_mst_api1_NWNMasterServerAPI</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ICON_02.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_03.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_04.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_05.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_06.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_07.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_08.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_09.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_10.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_11.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_12.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_13.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_14.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_15.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_16.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_17.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_18.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_19.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_20.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ICON_21.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Release\" />
+    <None Include="Web References\com.valhallalegends.mst.api1\NWNMasterServerAPI.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

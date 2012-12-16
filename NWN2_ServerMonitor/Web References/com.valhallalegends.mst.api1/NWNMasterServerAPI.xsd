@@ -10,12 +10,23 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="ActivePlayerCount" type="xs:unsignedInt" />
       <xs:element minOccurs="0" name="BuildNumber" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ELCEnforced" type="xs:boolean" />
       <xs:element minOccurs="0" name="ExpansionsMask" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="GameType" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ILREnforced" type="xs:boolean" />
       <xs:element minOccurs="0" name="LastHeartbeat" type="xs:dateTime" />
       <xs:element minOccurs="0" name="LocalVault" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaximumLevel" type="xs:unsignedInt" />
       <xs:element minOccurs="0" name="MaximumPlayerCount" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="MinimumLevel" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="ModuleDescription" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ModuleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModuleUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OnePartyOnly" type="xs:boolean" />
       <xs:element minOccurs="0" name="Online" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PVPLevel" type="xs:unsignedInt" />
+      <xs:element minOccurs="0" name="PWCUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PlayerPause" type="xs:boolean" />
       <xs:element minOccurs="0" name="PrivateServer" type="xs:boolean" />
       <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="ServerAddress" nillable="true" type="xs:string" />

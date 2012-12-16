@@ -6,6 +6,7 @@
       <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd0" namespace="http://api.mst.valhallalegends.com/NWNMasterServerAPI" />
       <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NWN" />
+      <xsd:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="INWNMasterServerAPI_LookupServerByName_InputMessage">
@@ -26,6 +27,24 @@
   <wsdl:message name="INWNMasterServerAPI_GetOnlineServerList_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOnlineServerListResponse" />
   </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetOnlineUserCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineUserCount" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetOnlineUserCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineUserCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetSupportedProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportedProductList" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_GetSupportedProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSupportedProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByModule" />
+  </wsdl:message>
+  <wsdl:message name="INWNMasterServerAPI_LookupServerByModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LookupServerByModuleResponse" />
+  </wsdl:message>
   <wsdl:portType name="INWNMasterServerAPI">
     <wsdl:operation name="LookupServerByName">
       <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByName" message="tns:INWNMasterServerAPI_LookupServerByName_InputMessage" />
@@ -38,6 +57,18 @@
     <wsdl:operation name="GetOnlineServerList">
       <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineServerList" message="tns:INWNMasterServerAPI_GetOnlineServerList_InputMessage" />
       <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineServerListResponse" message="tns:INWNMasterServerAPI_GetOnlineServerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineUserCount">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineUserCount" message="tns:INWNMasterServerAPI_GetOnlineUserCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineUserCountResponse" message="tns:INWNMasterServerAPI_GetOnlineUserCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedProductList">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetSupportedProductList" message="tns:INWNMasterServerAPI_GetSupportedProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetSupportedProductListResponse" message="tns:INWNMasterServerAPI_GetSupportedProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LookupServerByModule">
+      <wsdl:input wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByModule" message="tns:INWNMasterServerAPI_LookupServerByModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByModuleResponse" message="tns:INWNMasterServerAPI_LookupServerByModule_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:service name="NWNMasterServerAPI">

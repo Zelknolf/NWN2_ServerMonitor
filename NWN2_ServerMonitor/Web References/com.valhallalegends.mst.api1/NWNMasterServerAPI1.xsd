@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://api.mst.valhallalegends.com/NWNMasterServerAPI" elementFormDefault="qualified" targetNamespace="http://api.mst.valhallalegends.com/NWNMasterServerAPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NWN" />
+  <xs:import schemaLocation="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="LookupServerByName">
     <xs:complexType>
       <xs:sequence>
@@ -42,6 +43,47 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/NWN" minOccurs="0" name="GetOnlineServerListResult" nillable="true" type="q3:ArrayOfNWGameServer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineUserCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOnlineUserCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOnlineUserCountResult" type="xs:unsignedInt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportedProductList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSupportedProductListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetSupportedProductListResult" nillable="true" type="q4:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupServerByModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Product" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Module" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LookupServerByModuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/NWN" minOccurs="0" name="LookupServerByModuleResult" nillable="true" type="q5:ArrayOfNWGameServer" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

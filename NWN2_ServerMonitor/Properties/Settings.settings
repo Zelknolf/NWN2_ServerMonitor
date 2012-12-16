@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NWN2_ServerMonitor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="NWN2_ServerMonitor_com_valhallalegends_mst_api_NWNMasterServerAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc</Value>
+    </Setting>
+    <Setting Name="NWN2_ServerMonitor_com_valhallalegends_mst_api1_NWNMasterServerAPI" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

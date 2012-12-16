@@ -39,6 +39,33 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetOnlineUserCount">
+      <soap12:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineUserCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedProductList">
+      <soap12:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetSupportedProductList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupServerByModule">
+      <soap12:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByModule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="BasicHttpBinding_INWNMasterServerAPI" type="i0:INWNMasterServerAPI">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -62,6 +89,33 @@
     </wsdl:operation>
     <wsdl:operation name="GetOnlineServerList">
       <soap:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineServerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineUserCount">
+      <soap:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetOnlineUserCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedProductList">
+      <soap:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/GetSupportedProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LookupServerByModule">
+      <soap:operation soapAction="http://api.mst.valhallalegends.com/NWNMasterServerAPI/INWNMasterServerAPI/LookupServerByModule" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

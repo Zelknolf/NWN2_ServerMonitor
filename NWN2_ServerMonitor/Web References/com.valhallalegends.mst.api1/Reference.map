@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd2" filename="NWNMasterServerAPI.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?wsdl" filename="NWNMasterServerAPI.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?wsdl=wsdl0" filename="NWNMasterServerAPI0.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?disco" filename="NWNMasterServerAPI.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd1" filename="NWNMasterServerAPI0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd0" filename="NWNMasterServerAPI1.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://api.mst.valhallalegends.com/NWNMasterServerAPI/NWNMasterServerAPI.svc?xsd=xsd3" filename="NWNMasterServerAPI2.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>
