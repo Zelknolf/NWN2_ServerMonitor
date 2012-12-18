@@ -21,7 +21,6 @@ namespace NWN2_ServerMonitor
             public static List<string> WatchedServers = new List<string>();
             public static ServerListForm serverLists = null;
 
-            public static NWNMasterServerAPI client;
             public static NotifyIcon trayIcon;
             public static ContextMenu trayMenu;
 
@@ -57,7 +56,6 @@ namespace NWN2_ServerMonitor
                 // And then we open the actual main part of the application.
                 try
                 {
-                    client = new NWNMasterServerAPI();
                     Application.Run(new SysTrayApp());
                 }
 
@@ -120,7 +118,6 @@ namespace NWN2_ServerMonitor
             private void OnExit(object sender, EventArgs e)
             {
                 Application.Exit();
-                client.Dispose();
             }
 
             private void ShowServers(object sender, EventArgs e)
@@ -152,7 +149,14 @@ namespace NWN2_ServerMonitor
             {
                 watchServers.Size = watchServers.PreferredSize;
                 watchServers.Click += ButtonClicked;
+                PopulateListBox(this, new EventArgs());
+                this.Resize += OnResized;
+                this.Shown += PopulateListBox;
+            }
 
+            public void PopulateListBox(object Sender, EventArgs e)
+            {
+                box.Clear();
                 box.View = View.Details;
                 box.Columns.Add("Server Name");
                 box.Columns.Add("Module Name");
@@ -162,7 +166,7 @@ namespace NWN2_ServerMonitor
                 box.FullRowSelect = true;
                 try
                 {
-                    foreach (NWGameServer Server in SysTrayApp.client.GetOnlineServerList("NWN2"))
+                    foreach (NWGameServer Server in new NWNMasterServerAPI().GetOnlineServerList("NWN2"))
                     {
                         bool isSelected = SysTrayApp.WatchedServers.Contains(Server.ServerAddress);
                         box.Items.Add(new ListViewItem(new string[] { Server.ServerName, Server.ModuleName, Server.ServerAddress, Server.ActivePlayerCount.ToString(), Server.MaximumPlayerCount.ToString() }) { Selected = isSelected });
@@ -183,7 +187,6 @@ namespace NWN2_ServerMonitor
                 box.Size = new Size(sizeX, sizeY);
                 watchServers.Location = new Point(box.Width - watchServers.Width, box.Height);
                 this.ClientSize = new Size(sizeX, sizeY + watchServers.Height);
-                this.Resize += OnResized;
             }
 
             private void ButtonClicked(object Sender, EventArgs e)
@@ -234,7 +237,7 @@ namespace NWN2_ServerMonitor
                     NWGameServer Server = null;
                     try
                     {
-                        Server = SysTrayApp.client.LookupServerByAddress("NWN2", ServerAddress);
+                        Server = new NWNMasterServerAPI().LookupServerByAddress("NWN2", ServerAddress);
                     }
                     catch {  }
                     if (Server == null)
